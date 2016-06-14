@@ -13,7 +13,7 @@ get '/' do
 end
 
 post '/customers/tags' do
-  users = params[:emails].split(/[,\s]+/).map {|email| {email: email}}.uniq
+  users = params[:emails].gsub(/\r/, '').split(/[,\s]+/).map {|email| {email: email}}.uniq
   tag_name = params[:tag_name]
 
   begin
