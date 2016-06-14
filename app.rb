@@ -1,5 +1,8 @@
 require 'sinatra'
+require 'sinatra/flash'
 require 'intercom'
+
+enable :sessions
 
 def intercom
   @intercom ||= Intercom::Client.new(app_id: ENV['APP_ID'], api_key: ENV['API_KEY'])
@@ -13,8 +16,12 @@ post '/customers/tags' do
   users = params[:emails].split(/[,\s]+/).map {|email| {email: email}}.uniq
   tag_name = params[:tag_name]
 
-  intercom.tags.tag(users: users, name: tag_name)
-  logger.info "#{users.size} users tagged with #{tag_name} (#{users.join(', ')})"
+  begin
+    intercom.tags.tag(users: users, name: tag_name)
+    flash[:notice] = "#{users.size} users tagged with \"#{tag_name}\""
+  rescue Intercom::IntercomError => e
+    flash[:error] = "#{e.message}"
+  end
 
   redirect to('/')
 end
@@ -25,10 +32,14 @@ __END__
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,500">
 <link rel="stylesheet" href="/styles.css">
+
 <title>Intercom Web Interface</title>
+
 <h1>Intercom Web Interface</h1>
+<%= styled_flash %>
 <%= yield %>
 
 @@ index

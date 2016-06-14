@@ -57,4 +57,20 @@ small {
   text-shadow: 0 1px 1px rgba(0, 0, 0, .2)
 }
 
+.flash {
+  border-radius: .1875rem;
+  color: #222;
+  margin-bottom: 2rem;
+  padding: .75rem 1rem .5rem;
+  text-align: center;
+}
+
+.flash.error {
+  background-color: #FFD1D6;
+}
+
+.flash.notice {
+  background-color: #B0FFB4
+}
+
 .u-text-center { text-align: center;}
