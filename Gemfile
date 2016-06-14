@@ -10,4 +10,5 @@ group :test do
   gem 'minitest'
   gem 'rack-test'
   gem 'webmock'
+  gem 'simplecov', require: false
 end
