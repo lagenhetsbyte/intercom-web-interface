@@ -4,6 +4,8 @@ engines:
   csslint:
     enabled: true
     checks:
+      universal-selector:
+        enabled: false
       box-sizing:
         enabled: false
   eslint:
