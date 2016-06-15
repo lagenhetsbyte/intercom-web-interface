@@ -3,6 +3,9 @@ engines:
     enabled: true
   csslint:
     enabled: true
+    checks:
+      box-sizing:
+        enabled: false
   eslint:
     enabled: true
   duplication:
