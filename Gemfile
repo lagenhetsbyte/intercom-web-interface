@@ -11,7 +11,7 @@ group :test do
   gem 'rake'
   gem 'minitest'
   gem 'rack-test'
-  gem 'webmock'
+  gem 'webmock', require: false
   gem 'simplecov', require: false
   gem "codeclimate-test-reporter", require: nil
 end
