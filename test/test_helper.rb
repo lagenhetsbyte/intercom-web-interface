@@ -7,7 +7,9 @@ require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_filter '/vendor/'
+end
 
 require 'minitest/autorun'
 require 'rack/test'
