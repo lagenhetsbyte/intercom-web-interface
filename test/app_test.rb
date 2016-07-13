@@ -14,7 +14,7 @@ class AppTest < MiniTest::Unit::TestCase
   def test_start_page
     get '/'
     assert last_response.ok?
-    assert_includes last_response.body, 'Intercom Web Interface'
+    assert_includes last_response.body, 'Intercom Clock Interface'
   end
 
   def test_successful_post
