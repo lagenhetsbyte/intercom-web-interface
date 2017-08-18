@@ -9,3 +9,7 @@ A simple web interface for regular Intercom stuff.
 ``` bash
 APP_ID=XXXXXX API_KEY=XXXXXX ruby app.rb
 ```
+
+## Screenshot
+
+![](/screenshot.png)
