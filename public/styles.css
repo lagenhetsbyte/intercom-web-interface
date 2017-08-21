@@ -9,11 +9,11 @@ html {
 }
 
 body {
+  padding: 1rem;
   color: #444;
   font: 1em/1.375 Roboto, Arial, sans-serif;
   margin: 0 auto;
   max-width: 30rem;
-  padding: 1rem;
 }
 
 h1 {
@@ -48,7 +48,7 @@ small {
   -webkit-appearance: none;
   background: #3498db;
   border: 1px solid #3498db;
-  border-bottom: 5px solid #308cc9;
+  border-bottom: 5px solid #308cC9;
   border-radius: .25rem;
   color: #fff;
   cursor: pointer;
